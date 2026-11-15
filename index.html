@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#3e3e3b">
+  <meta name="description" content="A quiet place to write. A tactile typewriter, warm paper, and notes saved right on your device.">
+  <title>Typewriter — A little room to think</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="replica.css?v=3">
+</head>
+<body>
+  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6M8 12h12"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-notes" viewBox="0 0 24 24"><rect x="5" y="4" width="15" height="17" rx="2"/><path d="M9 8h7M9 12h7M9 16h4M2 8h4M2 13h4M2 18h4"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="m11 5-6 4H2v6h3l6 4zM15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-muted" viewBox="0 0 24 24"><path d="m11 5-6 4H2v6h3l6 4zM16 9l6 6M22 9l-6 6"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V2m-4 4 4-4 4 4M6 9H4v12h16V9h-2"/></symbol>
+    <symbol id="i-paper" viewBox="0 0 24 24"><path d="M6 3h10l4 4v14H6zM16 3v5h4M3 7v14M10 12h6M10 16h6"/></symbol>
+    <symbol id="i-font" viewBox="0 0 24 24"><path d="M3 5h12M9 5v15M6 20h6M18 10v10M15 10h6M16 20h4"/></symbol>
+    <symbol id="i-focus" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M8 21H3v-5"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="m8 4-5 5 5 5M3 9h10a7 7 0 0 1 0 14"/></symbol>
+    <symbol id="i-redo" viewBox="0 0 24 24"><path d="m16 4 5 5-5 5M21 9H11a7 7 0 0 0 0 14"/></symbol>
+    <symbol id="i-keyboard" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M5 9h1m3 0h1m3 0h1m3 0h1M5 12h1m3 0h1m3 0h1m3 0h1M7 16h10"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1 1m12 12 1 1M5 19l1-1M18 6l1-1"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M6 6l1 15h10l1-15M10 10v7m4-7v7"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="m8 3 9 0-1 7 3 4H5l3-4zM12 14v7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="i-print" viewBox="0 0 24 24"><path d="M6 8V3h12v5M6 17H3V8h18v9h-3M6 14h12v7H6zM17 11h1"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></symbol>
+  </defs></svg>
+
+  <div class="desk">
+    <header class="desk-heading"><a href="./" class="wordmark" aria-label="Typewriter home"><span class="brand-mark">t.</span> TYPEWRITER</a><span class="desk-tagline">a little room to think.</span><button class="text-button shortcut-help" id="helpButton">Keyboard shortcuts <span>?</span></button></header>
+    <main class="typewriter" aria-label="Typewriter note editor">
+      <section class="paper" id="paper" aria-label="Writing paper">
+        <div class="paper-grain"></div><div class="lamplight" id="lamplight" aria-hidden="true"><div class="lamp-beam"></div><div class="lamp-pool"></div></div>
+        <header class="paper-header">
+          <button class="icon-button library-trigger" id="libraryButton" aria-label="Open notes"><svg><use href="#i-back"/></svg><span>Notes</span></button>
+          <div class="note-meta"><span id="noteName">A quiet beginning</span><span class="save-status" id="saveStatus">Saved on this device</span></div>
+          <div class="paper-actions"><span class="word-counter" id="wordCount">0 words</span><button class="icon-button" id="shareButton" aria-label="Export note" aria-expanded="false"><svg><use href="#i-share"/></svg></button></div>
+        </header>
+        <div class="paper-guide" aria-hidden="true"><span>01</span><div></div></div>
+        <div class="writing-area" id="writingArea"><textarea id="editor" aria-label="Write your note" placeholder="Let a thought find its way here…" spellcheck="false" inputmode="none" autocapitalize="sentences" autocomplete="off"></textarea></div>
+        <div class="paper-bottom"><span id="lineCount">LINE 01</span><span class="paper-label">A THOUGHT, GIVEN A PLACE.</span><span id="charCount">0 CHARACTERS</span></div>
+        <div class="carriage" aria-hidden="true"><span class="carriage-end left"></span><div class="carriage-rail"></div><span class="carriage-end right"></span><div class="type-guide" id="typeGuide"><div class="head-hammer"><i></i></div><div class="head-shell"><span class="head-led"></span><span class="head-led second"></span><span class="head-screw"></span></div></div></div>
+      </section>
+
+      <section class="machine" aria-label="Typewriter keyboard">
+        <div class="tool-row">
+          <div class="toolbar" role="toolbar" aria-label="Writing tools">
+            <button class="tool-button" id="newButton" aria-label="New note" data-tip="New note"><svg><use href="#i-plus"/></svg></button>
+            <button class="tool-button" id="allNotesButton" aria-label="All notes" data-tip="Your notes"><svg><use href="#i-notes"/></svg></button>
+            <span class="tool-divider"></span>
+            <button class="tool-button" id="paperButton" aria-label="Paper settings" aria-expanded="false" data-tip="Paper & light"><svg><use href="#i-paper"/></svg></button>
+            <button class="tool-button" id="fontButton" aria-label="Font settings" aria-expanded="false" data-tip="Typeface"><svg><use href="#i-font"/></svg></button>
+            <button class="tool-button active" id="soundButton" aria-label="Turn typewriter sound off" aria-pressed="true" data-tip="Typewriter sound"><svg><use href="#i-sound"/></svg></button>
+            <button class="tool-button active" id="lampTool" aria-label="Turn carriage light off" aria-pressed="true" data-tip="Carriage light"><svg><use href="#i-sun"/></svg></button>
+            <span class="tool-divider"></span>
+            <button class="tool-button" id="undoButton" aria-label="Undo" data-tip="Undo"><svg><use href="#i-undo"/></svg></button>
+            <button class="tool-button" id="redoButton" aria-label="Redo" data-tip="Redo"><svg><use href="#i-redo"/></svg></button>
+            <button class="tool-button" id="focusButton" aria-label="Enter full screen" aria-pressed="false" data-tip="Full screen with keyboard"><svg><use href="#i-focus"/></svg></button>
+          </div>
+          <button class="tool-button keyboard-toggle" id="keyboardButton" aria-label="Use device keyboard" aria-pressed="false" data-tip="Device keyboard"><svg><use href="#i-keyboard"/></svg></button>
+        </div>
+        <div class="keyboard" id="keyboard" aria-label="On-screen keyboard"></div>
+        <footer class="machine-footer"><span><i></i><span id="footerStatus">All thoughts, safely kept.</span></span><span class="machine-signature">one key at a time.</span><span class="sound-state" id="soundState">SOUND ON <b>◖)))</b></span></footer>
+      </section>
+
+      <div class="popover" id="paperPopover" role="dialog" aria-label="Paper settings" hidden>
+        <div class="popover-heading">Make yourself at home.</div><p>Choose your paper</p>
+        <div class="paper-options"><button data-paper="warm" class="paper-swatch selected" aria-label="Warm paper" aria-pressed="true"><span></span>Warm</button><button data-paper="cream" class="paper-swatch" aria-label="Cream paper" aria-pressed="false"><span></span>Cream</button><button data-paper="fog" class="paper-swatch" aria-label="Fog paper" aria-pressed="false"><span></span>Fog</button><button data-paper="night" class="paper-swatch" aria-label="Night paper" aria-pressed="false"><span></span>Night</button></div>
+        <div class="setting-row"><span><svg><use href="#i-sun"/></svg>Reading light</span><button class="switch" id="lightButton" role="switch" aria-label="Reading light" aria-checked="true"><span></span></button></div>
+        <label class="size-setting light-setting" for="lightLevel">Brightness <input id="lightLevel" type="range" min="20" max="100" value="80"><output id="lightValue">80%</output></label>
+      </div>
+      <div class="popover font-popover" id="fontPopover" role="dialog" aria-label="Font settings" hidden>
+        <div class="popover-heading">Find your voice.</div><div class="font-options"><button data-font="classic" class="selected"><span>Classic</span><small>the familiar rhythm</small><svg><use href="#i-check"/></svg></button><button data-font="clean"><span>Clean</span><small>a clear head</small><svg><use href="#i-check"/></svg></button><button data-font="book"><span>Bookish</span><small>room for a story</small><svg><use href="#i-check"/></svg></button></div>
+        <label class="size-setting" for="fontSize">Type size <input id="fontSize" type="range" min="14" max="24" value="17"><output id="sizeValue">17</output></label>
+      </div>
+      <div class="popover export-popover" id="exportPopover" role="dialog" aria-label="Export options" hidden><div class="popover-heading">Let your words travel.</div><button id="downloadButton"><svg><use href="#i-download"/></svg><span>Download as text<small>A simple .txt file</small></span></button><button id="copyButton"><svg><use href="#i-copy"/></svg><span>Copy note<small>Take your words anywhere</small></span></button><button id="printButton"><svg><use href="#i-print"/></svg><span>Print / Save as PDF<small>A page worth keeping</small></span></button></div>
+      <button class="exit-focus" id="exitFocus" hidden aria-label="Exit full screen"><svg><use href="#i-focus"/></svg><span>Exit full screen</span><kbd>Esc</kbd></button>
+    </main>
+    <footer class="desk-footer"><span>A blank page. A softer pace.</span><span>Your notes stay in this browser. <button id="backupButton">Download a backup ↗</button></span></footer>
+  </div>
+
+  <div class="drawer-overlay" id="drawerOverlay" hidden></div>
+  <aside class="notes-drawer" id="notesDrawer" role="dialog" aria-modal="true" aria-label="Your notes" hidden>
+    <div class="drawer-header"><div><span class="eyebrow">YOUR LITTLE COLLECTION</span><h1>Words worth keeping.</h1></div><button class="icon-button" id="closeLibrary" aria-label="Close notes"><svg><use href="#i-close"/></svg></button></div>
+    <button class="create-note" id="drawerNew"><svg><use href="#i-plus"/></svg>A fresh page<span>↗</span></button>
+    <label class="search-field"><svg><use href="#i-search"/></svg><input id="noteSearch" type="search" placeholder="Find a thought…" aria-label="Search notes"></label>
+    <div class="library-tabs"><button class="selected" id="activeTab">Notes <span id="notesCount">1</span></button><button id="trashTab">Recently deleted <span id="trashCount">0</span></button></div>
+    <div id="notesList" class="notes-list"></div>
+    <div class="drawer-footer"><span><i></i> Saved only on this device</span><button id="importButton">Import backup</button><input type="file" id="importFile" accept="application/json,.json" hidden></div>
+  </aside>
+  <dialog class="help-dialog" id="helpDialog"><button class="icon-button close-help" id="closeHelp" aria-label="Close shortcuts"><svg><use href="#i-close"/></svg></button><span class="eyebrow">A FEW LITTLE SHORTCUTS</span><h2>Keep your hands<br>on the keys.</h2><dl><div><dt>New note</dt><dd><kbd>Alt</kbd> <kbd>N</kbd></dd></div><div><dt>Your notes</dt><dd><kbd>Alt</kbd> <kbd>L</kbd></dd></div><div><dt>Full screen</dt><dd><kbd>Alt</kbd> <kbd>F</kbd></dd></div><div><dt>Save as text</dt><dd><kbd>Ctrl / ⌘</kbd> <kbd>S</kbd></dd></div><div><dt>Undo / redo</dt><dd><kbd>Ctrl / ⌘</kbd> <kbd>Z / Y</kbd></dd></div><div><dt>Close a panel</dt><dd><kbd>Esc</kbd></dd></div></dl><p>Your notes save automatically as you write.</p></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <pre class="print-page" id="printPage"></pre>
+  <script src="mechanism.js?v=3"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>
